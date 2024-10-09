@@ -27,7 +27,7 @@
               var player_unique_id;
               window.launchedGame = false;
 
-              window.InitWebApp = function initVkWebApp() {
+              window.InitWebApp = function initWebApp() {
                      vkBridge.send("VKWebAppInit", {});
 
                      window.LanguageCheck("ru");
@@ -83,6 +83,8 @@
                             console.log(error);
                           });
                     }
+
+              }
 
                     window.ShowBanner();
 
