@@ -69,7 +69,7 @@
                             .catch(error => console.log(error));
                     }
 
-                    window.ShowBanner = function showRewarded() {
+                    window.ShowBanner = function showBanner() {
                         vkBridge.send('VKWebAppShowBannerAd', {
                           banner_location: 'bottom'
                           })
@@ -86,10 +86,9 @@
 
               }
 
-                    window.ShowBanner();
 
-
-              window.InitWebApp();
+                window.InitWebApp();
+                window.ShowBanner();
 
               window.BuyInApp = function buyInApp(inapp_id) {
 
