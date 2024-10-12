@@ -110,19 +110,21 @@
               }
 
               window.GetKey = function getKey(key) {
+                     console.log("Get key " + key);
                      vkBridge.send("VKWebAppStorageGet", {"keys": [key]})
                             .then(data => {
                                 console.log("Get " + key + " " + data.keys[0].value);
                                 window.OnGetKey(key, data.keys[0].value);
                                 })
-                            .catch(error => console.log(error));
+                            .catch(error => console.log("Error get key " + key + " " + error));
               }
 
               window.SetKey = function setKey(k, v) {
+                     console.log("Set key " + key + " " + v);
                      vkBridge.send("VKWebAppStorageSet", {
                         key: k,
                         value: v
-                     }).then(result => console.log("Set key " + k + " " + v + " " + result))
+                     }).then(result => console.log("Success set key " + k + " " + v + " " + result))
                             .catch(error => console.log(error));
               }
 
