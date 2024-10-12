@@ -113,7 +113,7 @@
                      console.log("Get key " + key);
                      vkBridge.send("VKWebAppStorageGet", {"keys": [key]})
                             .then(data => {
-                                console.log("Get " + key + " " + data.keys[0].value);
+                                console.log("Get " + key + " " + data.keys[0].value + " " + data.toString() + " stringify: " + JSON.stringify(data));
                                 window.OnGetKey(key, data.keys[0].value);
                                 })
                             .catch(error => console.log("Error get key " + key + " " + error));
